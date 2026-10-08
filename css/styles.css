@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "Clarity City";
+  src: url("../fonts/clarity-city-v3-400.woff2") format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Clarity City";
+  src: url("../fonts/clarity-city-v3-700.woff2") format("woff2");
+  font-weight: 700;
+}
+
+:root {
+  --hue: 263;
+
+  --color-bg: hsl(var(--hue), 20%, 8%);
+  --color-surface: hsl(var(--hue), 20%, 14%);
+  --color-text: hsl(var(--hue), 15%, 92%);
+  --color-primary: hsl(var(--hue), 55%, 70%);
+  --color-accent: hsl(calc(var(--hue) + 30), 75%, 72%);
+  --radius: 8px;
+  --space: 16px;
+}
+
+body {
+  font-family: "Clarity City", sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+
+}

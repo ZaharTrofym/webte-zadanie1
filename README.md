@@ -1,0 +1,1 @@
+Font: Clarity City, SIL Open Font License 1.1, source: https://fonts.google.com/specimen/Clarity+City
