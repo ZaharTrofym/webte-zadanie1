@@ -8,33 +8,103 @@
 </head>
 <body>
   <header class="header">
-    <p class="header__name">Zakhar Trofymenko</p>
-    <p class="header__slogan">Študent aplikovanej informatiky, zaujíma ma programovanie</p>
+    <div class="container header__inner">
+      <a href="./index.html" class="header__logo">ZT</a>
+      <div>
+        <p class="header__name">Zakhar Trofymenko</p>
+        <p class="header__slogan">Študent aplikovanej informatiky, zaujíma ma programovanie</p>
+      </div>
+    </div>
   </header>
   <nav class="nav">
-    <ul class="nav__list">
-      <li class="nav__item">
-        <a href="./index.html" class="nav__link" aria-current="page">Profil</a>
-      </li>
-      <li class="nav__item">
-        <a href="./pages/cv.html" class="nav__link">Životopis</a>
-      </li>
-      <li class="nav__item">
-        <a href="./pages/workspace.html" class="nav__link">Pracovisko</a>
-      </li>
-      <li class="nav__item">
-        <a href="./pages/schedule.html" class="nav__link">Rozvrh</a>
-      </li>
-      <li class="nav__item">
-        <a href="./pages/map.html" class="nav__link">Mapa</a>
-      </li>
-    </ul>
+    <div class="container">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a href="./index.html" class="nav__link" aria-current="page">Profil</a>
+        </li>
+        <li class="nav__item">
+          <a href="./pages/cv.html" class="nav__link">Životopis</a>
+        </li>
+        <li class="nav__item">
+          <a href="./pages/workspace.html" class="nav__link">Pracovisko</a>
+        </li>
+        <li class="nav__item">
+          <a href="./pages/schedule.html" class="nav__link">Rozvrh</a>
+        </li>
+        <li class="nav__item">
+          <a href="./pages/map.html" class="nav__link">Mapa</a>
+        </li>
+      </ul>
+    </div>
   </nav>
   <main class="main">
-    <h1 class="main__title">Profil</h1>
+    <div class="container">
+      <section class="profile">
+        <img src="./img/me.jpg" alt="" class="profile__image">
+        <div class="profile__description">
+          <p class="profile__eyebrow">Profil</p>
+          <h1 class="profile__title">Som Zakhar. Študujem aplikovanú informatiku.</h1>
+          <div class="profile__intro">
+            <p class="profile__lead">Na FEI STU v Bratislave píšem bakalársku prácu o analýze medicínskych obrazov a programovanie sa učím krok za krokom.</p>
+            <p>Mám aj praktickú skúsenosť z práce na CNC stroji, kde som vyrábal diely. HTML a CSS som sa najprv učil sám, dnes ich používam na tomto webe a pomaly sa dostávam k Pythonu.</p>
+          </div>
+          <div class="profile__buttons">
+            <a class="button button--filled" href="./pages/cv.html">Môj životopis</a>
+            <a class="button" href="./pages/map.html">Kde ma nájdete</a>
+          </div>
+        </div>
+      </section>
+      <section class="key-things">
+        <h2 class="key-things">Tri veci, ktoré ma vystihujú</h2>
+        <ul class="key-things__list">
+          <li class="key-things__item">
+            <h3 class="key-things__name">HTML a CSS</h3>
+            <p class="key-things__text">Základy som sa naučil sám a používam ich na tomto webe.</p>
+          </li>
+          <li class="key-things__item">
+            <h3 class="key-things__name">CNC obrábanie</h3>
+            <p class="key-things__text">Praktická skúsenosť z práce na CNC stroji, kde som vyrábal diely.</p>
+          </li>
+          <li class="key-things__item">
+            <h3 class="key-things__name">Python</h3>
+            <p class="key-things__text">Začiatočník. Poznám základy jazyka, knižnice sa ešte len učím.</p>
+          </li>
+        </ul>
+      </section>
+      <aside class="quote">
+        <p>Najprv pochopiť, potom písať kód.</p>
+        <p>Moje motto</p>
+      </aside>
+    </div>
   </main>
   <footer class="footer">
-    <address></address>
+    <address class="footer__address container">
+      <div>
+        <h2 class="footer__title">Kontakt</h2>
+        <p>Zakhar Trofymenko</p>
+        <a href="mailto:xtrofymenko@stuba.sk">xtrofymenko@stuba.sk</a>
+        <a href="tel:+421900123456">+421 900 123 456</a>
+        <p>Bratislava, Slovensko</p>
+      </div>
+      <div>
+        <h2 class="footer__title">Zdroje</h2>
+        <ul class="footer__list">
+          <li>
+            <a href="https://fonts.google.com/specimen/Clarity+City" target="_blank">Písmo Clarity City</a> (licencia SIL Open Font License 1.1)
+          </li>
+          <li>
+            <a href="https://github.com/ZaharTrofym/webte-zadanie1/tree/main/img" target="_blank">Obrázky: vlastné ilustrácie</a>
+          </li>
+          <li>
+            <a href="https://github.com/ZaharTrofym/webte-zadanie1" target="_blank">Zdrojový kód na GitHube</a>
+          </li>
+        </ul> 
+      </div>
+      <div>
+        <h2 class="footer__title">Rok</h2>
+        <p>© 2026 Zakhar Trofymenko</p>
+      </div>
+    </address>
   </footer>
 </body>
 </html>
