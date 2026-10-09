@@ -362,6 +362,7 @@ address {
 .footer__address div {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .footer__list li {
