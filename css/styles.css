@@ -170,6 +170,23 @@ img {
   background: none;
 }
 
+.skip-link {
+  position: absolute;
+  top: -4rem;
+  left: var(--space);
+  z-index: 100;
+  padding: var(--space-sm) var(--space);
+  border-radius: var(--radius-pill);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: var(--space);
+}
+
 .header {
   padding-block: var(--space-lg) var(--space);
 }
@@ -674,6 +691,10 @@ img {
   display: inline-block;
   margin-top: var(--space-sm);
   font-weight: 700;
+}
+
+.hotspots__hint {
+  display: none;
 }
 
 .status {
@@ -1231,13 +1252,22 @@ button.button {
     display: none;
   }
 
-  .hotspots:not(:has(.hotspot:hover, .hotspot:focus-within)) .hotspot:first-child .hotspot__panel {
-    opacity: 1;
-    visibility: visible;
+
+  .hotspots__hint {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: var(--space-sm);
+    padding: var(--space);
+    border: 2px dashed var(--color-border);
+    border-radius: var(--radius);
+    color: var(--color-muted);
   }
 
-  .hotspots:not(:has(.hotspot:hover, .hotspot:focus-within)) .hotspot:first-child .hotspot__dot {
-    background: var(--color-accent-soft);
+  .hotspots:has(.hotspot:hover, .hotspot:focus-within) .hotspots__hint {
+    visibility: hidden;
   }
 
     .filters {
