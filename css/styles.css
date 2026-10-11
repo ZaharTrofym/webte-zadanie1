@@ -208,7 +208,15 @@ img {
 }
 
 .nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
+}
+
+.nav__toggle {
+  display: none;
 }
 
 .nav__list {
@@ -234,11 +242,15 @@ img {
   width: 28px;
   height: 4px;
   border-radius: 0 0 4px 4px;
+  transform: translateX(-50%);
+}
+
+.nav__link:hover::before {
+  background: var(--color-border);
 }
 
 .nav__link[aria-current="page"]::before {
   background: var(--color-primary);
-  transform: translateX(-50%);
 }
 
 .nav__link[aria-current="page"] {
@@ -305,13 +317,14 @@ img {
 }
 
 .key-things__list {
-  display: grid;
+  display: flex;
   gap: var(--space);
   margin-top: var(--space-lg);
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  flex-wrap: wrap;
 }
 
 .key-things__item {
+  flex: 1 1 240px;
   padding: var(--space-lg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
@@ -399,19 +412,6 @@ img {
 
 .footer__list li {
   margin-bottom: var(--space-sm);
-}
-
-@media (max-width: 600px) {
-  .nav__list,
-  .profile__buttons {
-    flex-wrap: wrap;
-  }
-
-  .profile__image {
-    float: none;
-    display: block;
-    margin: 0 0 var(--space);
-  }
 }
 
 .page-intro {
@@ -538,5 +538,112 @@ img {
   overflow: hidden;
 }
 
-.workspace__image {
+@media (max-width: 768px) {
+  .header__slogan {
+    font-size: 0.85rem;
+  }
+
+  .nav__toggle {
+    display: inline-flex;
+    padding: 0;
+    margin: 0;
+    background: 0;
+    border: 0;
+    color: var(--color-text);
+    font-family: "Clarity City", sans-serif;
+    line-height: 1.6;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    cursor: pointer;
+    min-height: 48px;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+  
+  .nav__toggle-icon {
+    position: relative;
+  }
+
+  
+  .nav__toggle-icon::before, .nav__toggle-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+  }
+  
+  .nav__toggle-icon::before {
+    top: -7px;
+  }
+
+  .nav__toggle-icon::after {
+    top: 7px;
+  }
+
+  .nav__toggle-icon, .nav__toggle-icon::before, .nav__toggle-icon::after {
+    display: block;
+    width: 22px;
+    height: 3px;
+    background: var(--color-primary);
+    border-radius: 2px;
+    transition: 0.2s;
+  }
+
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: max-height 0.3s ease, visibility 0.3s;
+  }
+
+  .nav__list--open {
+    max-height: 400px;
+    visibility: visible;
+  }
+
+  .nav__toggle[aria-expanded="true"] .nav__toggle-icon {
+    background: transparent;
+  }
+
+  .nav__toggle[aria-expanded="true"] .nav__toggle-icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  .nav__toggle[aria-expanded="true"] .nav__toggle-icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+
+  .profile__buttons {
+    flex-wrap: wrap;
+  }
+
+  .nav__link {
+    padding: var(--space-sm) 0 var(--space-sm) var(--space);
+  }
+
+  .nav__link::before {
+    top: 50%;
+    left: 0;
+    width: 4px;
+    height: 24px;
+    border-radius: 0 4px 4px 0;
+    transform: translateY(-50%);
+  }
+
+  .profile__image {
+    float: none;
+    width: 120px;
+    margin: 0 0 var(--space);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
+  }
 }

@@ -23,6 +23,9 @@
   </header>
   <nav class="nav">
     <div class="container">
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-list">
+        <span class="nav__toggle-icon"></span>
+        Menu</button>
       <ul class="nav__list">
         <li class="nav__item">
           <a href="../index.html" class="nav__link">Profil</a>
@@ -50,7 +53,7 @@
       </div>
       <section class="cv">
         <aside class="cv__side">
-          <img src="../img/me.jpg" alt="Portrét Zakhara Trofymenka" class="cv__photo" width="800" height="1000">
+          <img src="../img/me.jpg" alt="Portrét Zakhara Trofymenka" class="cv__photo" width="800" height="1000" loading="lazy">
           <h2 class="cv__name">Zakhar Trofymenko</h2>
           <p class="cv__role">Študent aplikovanej informatiky</p>
           <div class="cv__block">
@@ -171,5 +174,6 @@
       </div>
     </address>
   </footer>
+  <script src="../js/script.js"></script>
 </body>
 </html>

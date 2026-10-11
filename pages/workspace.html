@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pracovisko | Zakhar Trofymenko</title>
-  <meta name="description" content="Moje pracovné prostredie: CNC stroj, monitor s kódom, notebook s medicínskymi snímkami, zošit a meradlo. Prejdi na body v obrázku a zisti viac.">
+  <meta name="description" content="Moje pracovné prostredie: prehliadač s vývojárskymi nástrojmi, editor kódu a terminál. Prejdi na body v obrázku a zisti viac.">
   <meta property="og:title" content="Pracovisko | Zakhar Trofymenko">
-  <meta property="og:description" content="Moje pracovné prostredie: CNC stroj, monitor s kódom, notebook s medicínskymi snímkami, zošit a meradlo. Prejdi na body v obrázku a zisti viac.">
+  <meta property="og:description" content="Moje pracovné prostredie: prehliadač s vývojárskymi nástrojmi, editor kódu a terminál. Prejdi na body v obrázku a zisti viac.">
   <meta property="og:image" content="../img/me.jpg">
   <link rel="icon" href="../favicon.ico">
   <link rel="stylesheet" href="../css/styles.css">
@@ -23,6 +23,9 @@
   </header>
   <nav class="nav">
     <div class="container">
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-list">
+        <span class="nav__toggle-icon"></span>
+        Menu</button>
       <ul class="nav__list">
         <li class="nav__item">
           <a href="../index.html" class="nav__link">Profil</a>
@@ -52,7 +55,7 @@
       <section class="workspace">
         <h2 class="workspace__title">Čo všetko je na obrázku</h2>
         <div class="workspace__stage">
-          <img class="workspace__image" src="../img/workspace.jpg" width="1600" height="900" alt="">
+          <img class="workspace__image" src="../img/workspace.png" width="1920" height="1042" loading="lazy" alt="Snímka obrazovky môjho pracovného prostredia: vľavo prehliadač s týmto webom a otvorenými vývojárskymi nástrojmi, vpravo editor VS Code so zdrojovým kódom, stromom súborov a terminálom.">
         </div>
       </section>
     </div>
@@ -86,5 +89,6 @@
       </div>
     </address>
   </footer>
+  <script src="../js/script.js"></script>
 </body>
 </html>
