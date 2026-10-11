@@ -611,7 +611,6 @@ img {
   font-weight: 700;
   line-height: 1;
   cursor: pointer;
-  /* box-shadow: var(--shadow); */
   pointer-events: auto;
   transition: 0.2s;
 }
