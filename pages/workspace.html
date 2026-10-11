@@ -56,6 +56,45 @@
         <h2 class="workspace__title">Čo všetko je na obrázku</h2>
         <div class="workspace__stage">
           <img class="workspace__image" src="../img/workspace.png" width="1920" height="1042" loading="lazy" alt="Snímka obrazovky môjho pracovného prostredia: vľavo prehliadač s týmto webom a otvorenými vývojárskymi nástrojmi, vpravo editor VS Code so zdrojovým kódom, stromom súborov a terminálom.">
+          <ul class="hotspots" aria-label="Zaujímavé miesta na obrázku">
+            <li class="hotspot" style="--x: 17%; --y: 50%;">
+              <button type="button" class="hotspot__dot" aria-label="Bod 1: Prehliadač s webom" aria-describedby="hotspot-panel-1">1</button>
+              <div class="hotspot__panel" id="hotspot-panel-1">
+                <h3 class="hotspot__title">Prehliadač s webom</h3>
+                <p class="hotspot__text">Tu hneď kontrolujem, ako stránka vyzerá. Po každej zmene v kóde ju obnovím a pozriem, či všetko sedí.</p>
+              </div>
+            </li>
+            <li class="hotspot" style="--x: 42%; --y: 43%">
+              <button type="button" class="hotspot__dot" aria-label="Bod 2: Vývojárske nástroje (F12)" aria-describedby="hotspot-panel-2">2</button>
+              <div class="hotspot__panel" id="hotspot-panel-2">
+                <h3 class="hotspot__title">Vývojárske nástroje (F12)</h3>
+                <p class="hotspot__text">Cez DevTools hľadám chyby v štýloch, skúšam hodnoty v CSS a testujem mobilné rozloženie.</p>
+              </div>
+            </li>
+            <li class="hotspot" style="--x: 58%; --y: 35%">
+              <button type="button" class="hotspot__dot" aria-label="Bod 3: Strom súborov" aria-describedby="hotspot-panel-3">3</button>
+              <div class="hotspot__panel" id="hotspot-panel-3">
+                <h3 class="hotspot__title">Strom súborov</h3>
+                <p class="hotspot__text">Projekt mám rozdelený do priečinkov css, js, img a pages. Poriadok v súboroch mi šetrí čas.</p>
+              </div>
+            </li>
+            <li class="hotspot hotspot--left" style="--x: 82%; --y: 43%">
+              <button type="button" class="hotspot__dot" aria-label="Bod 4: Editor kódu" aria-describedby="hotspot-panel-4">4</button>
+              <div class="hotspot__panel" id="hotspot-panel-4">
+                <p class="hotspot__tag">Hlavná vec</p>
+                <h3 class="hotspot__title">Editor kódu</h3>
+                <p class="hotspot__text">Tu píšem HTML a CSS, čo sa práve učím na škole. Z týchto dvoch vecí je postavený celý tento web.</p>
+                <a class="hotspot__link" href="cv.html">Pozrieť moje zručnosti</a>
+              </div>
+            </li>
+            <li class="hotspot hotspot--left hotspot--up" style="--x: 81%; --y: 87%">
+              <button type="button" class="hotspot__dot" aria-label="Bod 5: Terminál a Git" aria-describedby="hotspot-panel-5">5</button>
+              <div class="hotspot__panel" id="hotspot-panel-5">
+                <h3 class="hotspot__title">Terminál a Git</h3>
+                <p class="hotspot__text">V termináli robím commit a push na GitHub. Mám tak zálohu a históriu všetkých zmien.</p>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
     </div>

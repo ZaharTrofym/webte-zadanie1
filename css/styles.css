@@ -532,11 +532,153 @@ img {
   color: var(--color-muted);
 }
 
-.workspace__stage {
+/* .workspace__stage {
   width: 100%;
   border-radius: var(--radius);
   border: 1px solid var(--color-border);
   overflow: hidden;
+} */
+
+.workspace__title {
+  margin-bottom: var(--space-lg);
+}
+
+.workspace__stage {
+  position: relative;
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.workspace__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: calc(var(--radius) - 1px);
+}
+
+.hotspots {
+  --dot-size: 44px;
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  pointer-events: none;
+}
+
+.hotspot {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+}
+
+.hotspot:hover,
+.hotspot:focus-within {
+  z-index: 2;
+}
+
+.hotspot__dot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  width: var(--dot-size);
+  height: var(--dot-size);
+  padding: 0;
+  border: 2px solid var(--color-accent);
+  border-radius: 50%;
+  background: var(--color-overlay);
+  color: var(--color-accent);
+  font: inherit;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  /* box-shadow: var(--shadow); */
+  pointer-events: auto;
+  transition: 0.2s;
+}
+
+.hotspot:hover .hotspot__dot,
+.hotspot:focus-within .hotspot__dot {
+  background: var(--color-accent);
+  color: var(--color-on-primary);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 4px var(--color-accent);
+}
+
+.hotspot__panel {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 1;
+  width: min(300px, 70vw);
+  padding: var(--space);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: var(--shadow);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: auto;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+/* invisible bridge so the panel does not close when the mouse moves to it */
+.hotspot__panel::before {
+  content: "";
+  position: absolute;
+  inset: -24px;
+  z-index: -1;
+}
+
+.hotspot:hover .hotspot__panel,
+.hotspot:focus-within .hotspot__panel {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* near the right / bottom edge the panel opens the other way */
+.hotspot--left .hotspot__panel {
+  left: auto;
+  right: 24px;
+}
+
+.hotspot--up .hotspot__panel {
+  top: auto;
+  bottom: 24px;
+}
+
+.hotspot__tag {
+  display: inline-block;
+  margin: 0 0 var(--space);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+  color: #1a1a1a;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.hotspot__title {
+  margin: 0 0 var(--space-sm);
+  font-size: 1.1rem;
+}
+
+.hotspot__text {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.hotspot__link {
+  display: inline-block;
+  margin-top: var(--space-sm);
+  font-weight: 700;
 }
 
 @media (max-width: 768px) {
@@ -644,6 +786,48 @@ img {
 
   .cv {
     grid-template-columns: 1fr;
+  }
+
+  .hotspots {
+    --dot-size: 36px;
+  }
+
+  /* reserve the panel space so the page never jumps */
+  .workspace__stage {
+    margin-bottom: calc(var(--panel-height) + var(--space));
+  }
+
+  .hotspot {
+    position: static;
+  }
+
+  .hotspot__dot {
+    left: var(--x);
+    top: var(--y);
+  }
+
+  .hotspot .hotspot__panel {
+    top: 100%;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    width: auto;
+    margin-top: var(--space-sm);
+    overflow: auto;
+    transition: none;
+  }
+
+  .hotspot__panel::before {
+    display: none;
+  }
+
+  .hotspots:not(:has(.hotspot:hover, .hotspot:focus-within)) .hotspot:first-child .hotspot__panel {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .hotspots:not(:has(.hotspot:hover, .hotspot:focus-within)) .hotspot:first-child .hotspot__dot {
+    background: var(--color-accent-soft);
   }
 }
 

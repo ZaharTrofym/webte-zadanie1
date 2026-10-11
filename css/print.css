@@ -1,0 +1,96 @@
+@page {
+  size: A4;
+  margin: 1cm;
+}
+
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+
+  .header,
+  .nav,
+  .footer,
+  .eyebrow {
+    display: none;
+  }
+
+  .cv__heading {
+    display: block;
+  }
+
+  .page-intro {
+    margin-bottom: 0;
+  }
+
+  .page-title {
+    font-size: 34pt;
+    padding: 0.5cm 0.5cm 0 0.5cm;
+  }
+
+  .main {
+    padding-block: 0;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .cv {
+    grid-template-columns: 30% 1fr;
+    border: none;
+    border-radius: 0;
+    background: #fff;
+  }
+
+  .cv__side .skill {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.1cm;
+  }
+
+  .cv__side .skill__bar {
+    width: 100%;
+  }
+
+  .cv__side,
+  .cv__content {
+    background: #fff;
+    padding: 0 0.5cm;
+  }
+
+  .cv__photo {
+    max-width: 3cm;
+  }
+
+  .cv__role,
+  .cv__heading,
+  .cv__entry-meta,
+  .skill__note,
+  a {
+    color: #000;
+  }
+
+  .cv__name {
+    font-size: 16pt;
+  }
+
+  .cv__block,
+  .cv__entry,
+  .skill {
+    margin-bottom: 0.5cm;
+  }
+
+  .skill__bar {
+    flex-shrink: 0;
+  }
+
+  .skill__bar,
+  .skill__bar::after {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}
