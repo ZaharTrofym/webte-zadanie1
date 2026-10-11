@@ -5,8 +5,8 @@
 
 @media print {
   body {
-    background: #fff;
-    color: #000;
+    background: var(--color-print-bg);
+    color: var(--color-print-text);
     font-size: 10pt;
     line-height: 1.35;
   }
@@ -43,7 +43,7 @@
     grid-template-columns: 30% 1fr;
     border: none;
     border-radius: 0;
-    background: #fff;
+    background: var(--color-print-bg);
   }
 
   .cv__side .skill {
@@ -58,7 +58,7 @@
 
   .cv__side,
   .cv__content {
-    background: #fff;
+    background: var(--color-print-bg);
     padding: 0 0.5cm;
   }
 
@@ -71,7 +71,7 @@
   .cv__entry-meta,
   .skill__note,
   a {
-    color: #000;
+    color: var(--color-print-text);
   }
 
   .cv__name {

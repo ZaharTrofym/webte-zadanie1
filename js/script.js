@@ -1,3 +1,6 @@
+const SEMESTER_START = new Date(2026, 8, 21);
+const SEMESTER_END = new Date(2026, 11, 18, 23, 59);
+
 const toggleButton = document.querySelector(".nav__toggle");
 const navList = document.querySelector(".nav__list");
 
@@ -11,9 +14,6 @@ toggleButton.addEventListener("click", () => {
 const timetable = document.querySelector(".timetable");
 
 if (timetable) {
-  const SEMESTER_START = new Date(2026, 8, 21);
-  const SEMESTER_END = new Date(2026, 11, 18, 23, 59);
-
   const TYPE_NAMES = {
     lecture: "prednáška",
     exercise: "cvičenie",

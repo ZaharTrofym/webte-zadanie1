@@ -63,6 +63,9 @@
   --gutter: clamp(16px, 5vw, 80px);
   --container-max: 1240px;
   --panel-height: 12rem;
+
+  --color-print-bg: #fff;
+  --color-print-text: #000;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -533,13 +536,6 @@ img {
   color: var(--color-muted);
 }
 
-/* .workspace__stage {
-  width: 100%;
-  border-radius: var(--radius);
-  border: 1px solid var(--color-border);
-  overflow: hidden;
-} */
-
 .workspace__title {
   margin-bottom: var(--space-lg);
 }
@@ -629,7 +625,6 @@ img {
   transition: opacity 0.2s, visibility 0.2s;
 }
 
-/* invisible bridge so the panel does not close when the mouse moves to it */
 .hotspot__panel::before {
   content: "";
   position: absolute;
@@ -643,7 +638,6 @@ img {
   visibility: visible;
 }
 
-/* near the right / bottom edge the panel opens the other way */
 .hotspot--left .hotspot__panel {
   left: auto;
   right: 24px;
@@ -660,7 +654,7 @@ img {
   padding: 2px 8px;
   border-radius: var(--radius-pill);
   background: var(--color-accent);
-  color: #1a1a1a;
+  color: var(--color-on-primary);
   font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -1274,11 +1268,11 @@ button.button {
   }
 }
 
-/* @media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
     transition: none !important;
     animation: none !important;
   }
-} */
+}
